@@ -35,7 +35,7 @@
         width: 320px;
         text-align: left;
         border: 1px solid #e0d9d2;
-        margin-bottom: 20px; /* ✅ jarak antar card */
+        margin-bottom: 20px;
     }
     .card-header {
         display: flex;
@@ -66,7 +66,7 @@
         width: 100%;
     }
     .btn-copy:hover {
-        background-color: #ebf7ff;
+        background-color: #d6ecff;
     }
 </style>
 </head>
@@ -78,42 +78,37 @@
 <!-- Card 1 -->
 <div class="card">
     <div class="card-header">
-        <div>
-            <h3>RIDWAN ROSYADI</h3>
-        </div>
-        <img src="c:\Users\Asus\Documents\Downloads\Logo BCA_Biru.png" 
-             alt="BCA" width="60">
+        <h3>RIDWAN ROSYADI</h3>
+        <img src="images/bca.png" alt="BCA" width="60">
     </div>
-    <div class="card-number" id="rekening">3293 0104 6438 530</div>
-    <button class="btn-copy" onclick="copyAccount()">📋 Salin Rekening</button>
-    </button>
+    <div class="card-number" id="rekening1">3293 0104 6438 530</div>
+    <button class="btn-copy" onclick="copyRekening('rekening1')">📋 Salin Rekening</button>
 </div>
 
 <!-- Card 2 -->
 <div class="card">
     <div class="card-header">
-        <div>
-            <h3>SALSABILA DIVA SHAFA ADZRA</h3>
-        </div>
-        <img src="c:\Users\Asus\Documents\Downloads\Logo BRI.png" alt="BRI" width="60">
+        <h3>SALSABILA DIVA SHAFA ADZRA</h3>
+        <img src="images/bri.png" alt="BRI" width="60">
     </div>
     <div class="card-number" id="rekening2">1394106952</div>
     <button class="btn-copy" onclick="copyRekening('rekening2')">📋 Salin Rekening</button>
 </div>
 
 <script>
-function copyRekening() {
-    const rekening = document.getElementById("rekening").innerText;
-    navigator.clipboard.writeText(rekening).then(() => {
+function copyRekening(id) {
+    const nomor = document.getElementById(id).innerText;
+    navigator.clipboard.writeText(nomor).then(() => {
         alert("Nomor rekening berhasil disalin!");
+    }).catch(() => {
+        alert("Gagal menyalin nomor rekening.");
     });
-    document.addEventListener("DOMContentLoaded", function(){
-    document.querySelector("button").innerHTML = "📋 Salin Rekening";
-});
 }
 </script>
 
 </body>
 </html>
+
+
 
 
