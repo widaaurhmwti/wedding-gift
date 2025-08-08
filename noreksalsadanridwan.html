@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding Gift</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Playfair+Display&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Playfair Display', serif;
+        background-color: #ebf7ff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px;
+        color: #333;
+    }
+    h1 {
+        font-family: 'Cinzel Decorative', cursive;
+        font-size: 37.8px;
+        color: #30216a;
+        text-shadow: 2px 2px 0 #d6cfc9;
+        margin-bottom: 5px;
+    }
+    h2 {
+        font-size: 10.4px;
+        font-weight: normal;
+        margin-bottom: 25px;
+    }
+    .card {
+        background: white;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        width: 320px;
+        text-align: left;
+        border: 1px solid #e0d9d2;
+        margin-bottom: 20px; /* ✅ jarak antar card */
+    }
+    .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .card-header h3 {
+        margin: 0;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .card-number {
+        font-size: 20px;
+        margin: 10px 0 15px;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+    .btn-copy {
+        background-color: #ebf7ff;
+        border: none;
+        border-radius: 10px;
+        padding: 10px 15px;
+        cursor: pointer;
+        font-size: 14px;
+        color: #4a3c2f;
+        font-weight: bold;
+        transition: background 0.3s;
+        width: 100%;
+    }
+    .btn-copy:hover {
+        background-color: #ebf7ff;
+    }
+</style>
+</head>
+<body>
+
+<h1>Wedding Gift</h1>
+<h2>Berkat dan doa Anda sangat berarti bagi kami</h2>
+
+<!-- Card 1 -->
+<div class="card">
+    <div class="card-header">
+        <div>
+            <h3>RIDWAN ROSYADI</h3>
+        </div>
+        <img src="c:\Users\Asus\Documents\Downloads\Logo BCA_Biru.png" 
+             alt="BCA" width="60">
+    </div>
+    <div class="card-number" id="rekening">3293 0104 6438 530</div>
+    <button class="btn-copy" onclick="copyAccount()">📋 Salin Rekening</button>
+    </button>
+</div>
+
+<!-- Card 2 -->
+<div class="card">
+    <div class="card-header">
+        <div>
+            <h3>SALSABILA DIVA SHAFA ADZRA</h3>
+        </div>
+        <img src="c:\Users\Asus\Documents\Downloads\Logo BRI.png" alt="BRI" width="60">
+    </div>
+    <div class="card-number" id="rekening2">1394106952</div>
+    <button class="btn-copy" onclick="copyRekening('rekening2')">📋 Salin Rekening</button>
+</div>
+
+<script>
+function copyRekening() {
+    const rekening = document.getElementById("rekening").innerText;
+    navigator.clipboard.writeText(rekening).then(() => {
+        alert("Nomor rekening berhasil disalin!");
+    });
+    document.addEventListener("DOMContentLoaded", function(){
+    document.querySelector("button").innerHTML = "📋 Salin Rekening";
+});
+}
+</script>
+
+</body>
+</html>
+
+
